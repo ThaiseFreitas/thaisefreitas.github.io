@@ -2,43 +2,58 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Thaise Freitas</title>
+ <h1><span style="color:#38bdf8;">Thaise</span> Freitas 👋</h1>
  <style>
   body {
     font-family: Arial;
     margin: 0;
     background: #0f172a;
     color: #e2e8f0;
+    letter-spacing: 0.5px;
   }
 
   header {
     padding: 60px 20px;
     background: linear-gradient(135deg, #1e293b, #0f172a);
     text-align: center;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
-
+   
   h1 {
     margin: 0;
     font-size: 42px;
   }
 
   h2 {
-    color: #38bdf8;
-  }
+  color: #38bdf8;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
   section {
     padding: 50px 20px;
     max-width: 700px;
     margin: auto;
   }
+   section {
+  padding: 50px 20px;
+  max-width: 700px;
+  margin: auto;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
   .card {
-    background: #1e293b;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
+  background: #1e293b;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
 
   a {
     color: #38bdf8;
@@ -64,8 +79,15 @@
 <body>
 
 <header>
-  <h1>Thaise Freitas 👋</h1>
-  <p>Profissional de TI | Control-M/CTMS, CICS e monitoramento de jobs com JCL 🚀</p>
+    <h1>Thaise Freitas 👋</h1>
+  <div class="card">
+  <p>JCL</p>
+  <p>TSO</p>
+  <p>Control-M / CTMS</p>
+  <p>Mainframe</p>
+  <p>COBOL</p>
+  <p>Java</p>
+</div>
 </header>
 
 <section>
