@@ -22,6 +22,8 @@
   h1 {
     margin: 0;
     font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 600;
   }
 
   h2 {
@@ -34,13 +36,8 @@
     padding: 50px 20px;
     max-width: 700px;
     margin: auto;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-   section {
-  padding: 50px 20px;
-  max-width: 700px;
-  margin: auto;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
 
   .card {
   background: #1e293b;
@@ -49,16 +46,22 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: 0.3s;
-}
+ }
 
 .card:hover {
   transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.01);
 }
 
   a {
     color: #38bdf8;
     text-decoration: none;
+     transition: 0.3s;
   }
+   
+   a:hover {
+  text-decoration: underline;
+}
 
   /* TEXTOS DAS SEÇÕES */
   section p {
