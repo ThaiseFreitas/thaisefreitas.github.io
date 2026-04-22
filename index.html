@@ -19,6 +19,7 @@
     padding: 60px 20px;
     background: linear-gradient(135deg, #1e293b, #0f172a);
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    position: relative;
   }
 
   h1 {
@@ -129,6 +130,43 @@
     transform: translateY(0);
   }
 
+  /* =========================
+     🔵 TRADUTOR ESTILO DASHBOARD
+  ========================== */
+  .translate-box {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .translate-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(56,189,248,0.3);
+    transition: 0.3s ease;
+  }
+
+  .translate-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px rgba(56,189,248,0.6);
+  }
+
+  /* esconde visual padrão do Google */
+  #google_translate_element {
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+  }
+
 </style>
 </head>
 
@@ -136,9 +174,20 @@
 
 <header class="reveal">
 
-  <!-- ✅ GOOGLE TRANSLATE ADICIONADO (ÚNICA MODIFICAÇÃO) -->
-  <div style="text-align:right; margin-bottom:10px;">
+  <!-- 🔵 BOTÃO GLOBO CUSTOM -->
+  <div class="translate-box">
+
+    <div class="translate-btn" onclick="toggleTranslate()">
+      <!-- ÍCONE GLOBO SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </div>
+
     <div id="google_translate_element"></div>
+
   </div>
 
   <div class="header-container">
@@ -227,20 +276,10 @@
 
     <div class="card">
       <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
+      <p>Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS)...</p>
 
-      <p>
-        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
-        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
-        Projeto focado em rotinas operacionais, estabilidade e acompanhamento de processos críticos.
-      </p>
-
-      <p>
-        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a>
-      </p>
-
-      <p>
-        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a>
-      </p>
+      <p><a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a></p>
+      <p><a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a></p>
     </div>
 
     <div class="card">
@@ -258,12 +297,17 @@
   <div class="card" style="text-align:center;">
     <p><a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a></p>
     <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
-    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 Ver meu perfil no LinkedIn</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 LinkedIn</a></p>
   </div>
 </section>
 
-<!-- JS ANIMAÇÃO -->
+<!-- JS -->
 <script>
+function toggleTranslate() {
+  const el = document.getElementById("google_translate_element");
+  el.style.opacity = el.style.opacity === "1" ? "0" : "1";
+}
+
 const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
@@ -277,7 +321,7 @@ const observer = new IntersectionObserver(entries => {
 elements.forEach(el => observer.observe(el));
 </script>
 
-<!-- ✅ GOOGLE TRANSLATE SCRIPT -->
+<!-- GOOGLE TRANSLATE -->
 <script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
