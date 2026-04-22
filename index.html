@@ -117,34 +117,36 @@
     margin-bottom: 8px;
   }
 
-  /* Ajustado para 3 colunas conforme solicitado */
   .linha-tripla {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
 
-  .habilidades .card {
+  /* AJUSTE AQUI: Removido o espaço entre .card e .habilidades e forçado linha única */
+  .card.habilidades {
     display: flex;
-    flex-wrap: nowrap; /* Impede a quebra de linha */
-    gap: 10px;
-    justify-content: flex-start; /* Alinha ao início para permitir o scroll */
-    overflow-x: auto; /* Adiciona scroll horizontal se faltar espaço */
-    white-space: nowrap; /* Garante que o texto não quebre dentro dos itens */
-    padding: 20px;
+    flex-wrap: nowrap; 
+    gap: 15px;
+    justify-content: center; 
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 25px;
   }
 
-  /* Opcional: esconde a barra de rolagem para um visual mais limpo */
-  .habilidades .card::-webkit-scrollbar {
-    display: none;
-  }
-
-  .habilidades p {
+  /* Garante que os itens não encolham e mantenham o formato de pílula */
+  .card.habilidades p {
+    flex: 0 0 auto; 
     background: #0f172a;
-    padding: 8px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
     margin: 0;
     font-size: 14px;
+  }
+
+  /* Esconde a barra de rolagem em navegadores Webkit (Chrome/Safari) */
+  .card.habilidades::-webkit-scrollbar {
+    display: none;
   }
 
   section {
@@ -154,6 +156,10 @@
   @media (max-width: 900px) {
     .linha-tripla {
       grid-template-columns: 1fr;
+    }
+    /* No celular, alinha à esquerda para o scroll lateral fazer sentido */
+    .card.habilidades {
+      justify-content: flex-start;
     }
   }
 
@@ -167,7 +173,6 @@
     }
   }
 
-  /* ANIMAÇÃO */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -179,7 +184,6 @@
     transform: translateY(0);
   }
 
-  /* TOOLS */
   .top-tools {
     position: absolute;
     top: 15px;
@@ -221,12 +225,11 @@
     background: #fff;
   }
 
-  body.light .skills p {
+  body.light .card.habilidades p {
     background: #e5e7eb;
     color: #111;
   }
 
-  /* esconder google translate original */
   #google_translate_element {
     display: none;
   }
