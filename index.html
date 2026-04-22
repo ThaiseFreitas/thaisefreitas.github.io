@@ -14,9 +14,9 @@
     }
 
     header {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
     h1 {
@@ -55,7 +55,6 @@
     a {
       color: #38bdf8;
       text-decoration: none;
-      transition: 0.3s;
     }
 
     a:hover {
@@ -75,106 +74,86 @@
       opacity: 0.8;
     }
 
-    /* CENTRALIZAR HABILIDADES */
-    .habilidades p {
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-
-  .card {
-    padding: 15px;
-  }
-}
     .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: left;
-}
-
-.foto {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #38bdf8;
-  box-shadow: 0 0 15px rgba(56,189,248,0.5);
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: left;
+    }
 
     .header-container div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .foto {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 15px rgba(56,189,248,0.5);
+    }
+
+    .linha-dupla {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .linha-dupla {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .projetos-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-  .card ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-.card li {
-  margin-bottom: 8px;
-}
-
-    .linha-dupla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
     @media (max-width: 768px) {
-  .linha-dupla {
-    grid-template-columns: 1fr;
-  }
-}
+      .projetos-container {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .habilidades .card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
 
-.habilidades p {
-  background: #0f172a;
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin: 0;
-  font-size: 14px;
-}
-    section {
-  padding: 40px 20px;
-}
+    .habilidades p {
+      background: #0f172a;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 0;
+      font-size: 14px;
+    }
 
-    .linha-dupla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
 
-    .linha-dupla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-    </section>
+      section {
+        padding: 30px 15px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ✅ HEADER CORRIGIDO -->
 <header>
 
   <div style="text-align: right; margin-bottom: 10px;">
@@ -182,26 +161,23 @@
   </div>
 
   <div class="header-container">
-    <img src="imagemCV.jpeg" alt="Thaise Freitas" class="foto">
+    <img src="imagemCV.jpeg" class="foto" alt="Thaise Freitas">
 
     <div>
       <h1><span style="color:#38bdf8;">Thaise</span> Freitas 👋</h1>
-      <p>Operações Mainframe | Ambientes z/OS | Monitoramento e Rotinas Batch</p>
+      <p>Operações Mainframe | z/OS | Monitoramento de Jobs Batch</p>
     </div>
   </div>
 </header>
+
+<!-- 🔷 SOBRE + EXPERIÊNCIA -->
 <section class="linha-dupla">
 
   <div>
     <h2>💻 Sobre mim</h2>
     <div class="card">
-      <p>
-        Profissional em desenvolvimento na área de operações mainframe, com foco em ambientes z/OS, atuando em monitoramento de jobs, controle de rotinas batch e acompanhamento de processos críticos.
-      </p>
-
-      <p>
-        Possui conhecimento em JCL, TSO e Control-M, com foco em estabilidade, continuidade operacional e cumprimento de SLAs.
-      </p>
+      <p>Profissional em desenvolvimento na área de operações mainframe, com foco em ambientes z/OS, monitoramento de jobs e rotinas batch.</p>
+      <p>Conhecimento em JCL, TSO e Control-M, com foco em estabilidade operacional e SLAs.</p>
     </div>
   </div>
 
@@ -211,91 +187,69 @@
 
       <h3>Analista de Operações Mainframe</h3>
       <p><strong>Global Hitss</strong></p>
-   <p><em>Atual • Rio de Janeiro</em></p>
+      <p><em>Atual • Rio de Janeiro</em></p>
 
       <ul>
-        <li>Monitoramento de jobs batch em ambiente z/OS</li>
-        <li>Análise de falhas e leitura de logs</li>
-        <li>Acompanhamento de processos críticos</li>
-        <li>Execução e controle de rotinas via JCL</li>
-        <li>Uso de TSO e Control-M no gerenciamento operacional</li>
-        <li>Garantia de SLAs e continuidade dos serviços</li>
+        <li>Monitoramento de jobs batch em z/OS</li>
+        <li>Análise de logs e falhas</li>
+        <li>Execução de rotinas via JCL</li>
+        <li>Uso de TSO e Control-M</li>
+        <li>Garantia de SLAs</li>
       </ul>
 
     </div>
   </div>
 
+</section>
+
+<!-- 🔷 FORMAÇÃO + IDIOMAS -->
 <section class="linha-dupla">
 
-  <!-- FORMAÇÃO -->
   <div>
     <h2>🎓 Formação</h2>
     <div class="card">
-      <p>
-        Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela UERJ.
-      </p>
-      <p>
-        Coeficiente de rendimento: 7.75
-      </p>
+      <p>Graduação em Análise e Desenvolvimento de Sistemas – UERJ</p>
+      <p>CR: 7.75</p>
     </div>
   </div>
 
-  <!-- IDIOMAS -->
   <div>
     <h2>🌍 Idiomas</h2>
     <div class="card">
-
-      <p><strong>Inglês</strong></p>
-      <p><em>Intermediário a avançado (B1)</em></p>
-
-      <p>Experiência internacional na Inglaterra.</p>
-
-      <p>Certificação Cambridge PET.</p>
-
+      <p><strong>Inglês</strong> – Intermediário (B1)</p>
+      <p>Experiência na Inglaterra</p>
+      <p>Certificação Cambridge PET</p>
     </div>
   </div>
 
 </section>
 
-<!-- ✅ HABILIDADES CORRIGIDO -->
+<!-- 🔷 HABILIDADES -->
 <section class="habilidades">
   <h2>⚙️ Habilidades</h2>
 
   <div class="card">
-  <p>💻 JCL</p>
-<p>🖥️ TSO</p>
-<p>📊 Control-M</p>
-<p>⚙️ z/OS</p>
-<p>🔄 Batch</p>
-<p>🔍 Análise de falhas</p>
-</div>
+    <p>JCL</p>
+    <p>TSO</p>
+    <p>Control-M</p>
+    <p>z/OS</p>
+    <p>Batch</p>
+    <p>Análise de falhas</p>
+  </div>
 </section>
 
+<!-- 🔷 PROJETOS -->
 <section>
   <h2>📂 Projetos</h2>
 
   <div class="projetos-container">
 
     <div class="card">
-      <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
+      <h3>Monitoramento de Jobs Batch</h3>
+      <p>Simulação de monitoramento de jobs em ambiente mainframe com logs e status.</p>
 
-      <p>
-        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
-        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
-        Projeto focado em rotinas operacionais, estabilidade e acompanhamento de processos críticos.
-      </p>
-
-      <p>
-        🔗 <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">
-          Ver sistema funcionando
-        </a>
-      </p>
-
-      <p>
-        💻 <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">
-          Ver código no GitHub
-        </a>
-      </p>
+      <p><a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema</a></p>
+      <p><a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">GitHub</a></p>
     </div>
 
     <div class="card">
@@ -304,35 +258,23 @@
     </div>
 
   </div>
-
 </section>
 
+<!-- 🔷 CONTATO -->
 <section>
   <h2>📫 Contato</h2>
 
   <div class="card">
-    <p>
-  <a href="mailto:freitasthaise1@gmail.com">
-    📧 Enviar email
-  </a>
-</p>
-
-    <p>
-      <a href="https://wa.me/21974475407">💬 WhatsApp</a>
-    </p>
-
-     <p>
-  <a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">
-   💼 Ver meu perfil no LinkedIn
-  </a>
-</p>
+    <p><a href="mailto:freitasthaise1@gmail.com">📧 Email</a></p>
+    <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 LinkedIn</a></p>
   </div>
 </section>
 
-  <script type="text/javascript">
+<script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
-    {pageLanguage: 'pt'},
+    { pageLanguage: 'pt' },
     'google_translate_element'
   );
 }
