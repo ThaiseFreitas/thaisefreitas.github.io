@@ -34,7 +34,7 @@
 
     section {
       padding: 50px 20px;
-      max-width: 700px;
+      max-width: 1100px;
       margin: auto;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
@@ -114,6 +114,12 @@
   flex-direction: column;
   justify-content: center;
 }
+
+    .projetos-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
   </style>
 </head>
 
@@ -171,31 +177,37 @@
 <section>
   <h2>📂 Projetos</h2>
 
-  <div class="card">
- <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
+  <div class="projetos-container">
 
-  <p>
-   Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
-incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
-Projeto focado em rotinas operacionais, estabilidade e acompanhamento de processos críticos.
-  </p>
+    <div class="card">
+      <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
 
-  <p>
-    🔗 <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">
-      Ver sistema funcionando
-    </a>
-  </p>
-    <p>
-  💻 <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">
-    Ver código no GitHub
-  </a>
-</p>
-</div>
+      <p>
+        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
+        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
+        Projeto focado em rotinas operacionais, estabilidade e acompanhamento de processos críticos.
+      </p>
 
-  <div class="card">
-    <h3>Projeto 2</h3>
-    <p>Descrição do projeto</p>
+      <p>
+        🔗 <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">
+          Ver sistema funcionando
+        </a>
+      </p>
+
+      <p>
+        💻 <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">
+          Ver código no GitHub
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Projeto 2</h3>
+      <p>Descrição do projeto</p>
+    </div>
+
   </div>
+
 </section>
 
 <section>
