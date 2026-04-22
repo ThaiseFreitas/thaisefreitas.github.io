@@ -158,6 +158,11 @@
     section {
   padding: 40px 20px;
 }
+
+    .linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
   </style>
 </head>
 
@@ -216,21 +221,42 @@
 
 </section>
 
-<section>
-  <h2>🎓 Formação</h2>
-  <p>Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela Universidade do Estado do RJ (UERJ), com coeficiente de rendimento 7.75.</p>
- </section>
+<section class="linha-dupla">
 
-<section>
-  <h2>🌍 Idiomas</h2>
+  <div>
+    <h2>🎓 Formação</h2>
+    <div class="card">
+      <p>
+        Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela Universidade do Estado do RJ (UERJ).
+      </p>
 
-  <p>
-    <strong>Inglês:</strong> Nível intermediário a avançado (B1 - CEFR), com experiência internacional na Inglaterra para estudo da língua inglesa.
-  </p>
+      <p>
+        Coeficiente de rendimento: 7.75
+      </p>
+    </div>
+  </div>
 
-  <p>
-    Formação pela Scotts College London School, Callan School (estágios 1 ao 9) e Trinity College London. Certificação Cambridge PET (Preliminary English Test).
-  </p>
+  <div>
+    <h2>🌍 Idiomas</h2>
+    <div class="card">
+
+      <p><strong>Inglês</strong></p>
+      <p><em>Intermediário a avançado (B1)</em></p>
+
+      <p>
+        Experiência internacional na Inglaterra para estudo da língua inglesa.
+      </p>
+
+      <p>
+        Formação pela Scotts College London School, Callan School e Trinity College London.
+      </p>
+
+      <p>
+        Certificação Cambridge PET.
+      </p>
+
+    </div>
+  </div>
 
 </section>
 
