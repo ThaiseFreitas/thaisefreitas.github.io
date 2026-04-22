@@ -26,6 +26,8 @@
   h1 {
     margin: 0;
     font-size: 42px;
+    margin-bottom: 5px;
+    font-weight: 600;
   }
 
   h2 {
@@ -38,28 +40,43 @@
     padding: 50px 20px;
     max-width: 1100px;
     margin: auto;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
   .card {
     background: #1e293b;
+    margin: 10px 0;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.4s ease;
+    transition: 0.3s;
   }
 
   .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    transform: translateY(-5px) scale(1.01);
   }
 
   a {
     color: #38bdf8;
     text-decoration: none;
+    transition: 0.3s;
   }
 
   a:hover {
     text-decoration: underline;
+  }
+
+  section p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+    opacity: 0.8;
   }
 
   .header-container {
@@ -67,7 +84,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    text-align: left;
   }
 
   .foto {
@@ -76,28 +93,44 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #38bdf8;
+    box-shadow: 0 0 15px rgba(56,189,248,0.5);
   }
 
-  .grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+  .header-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .grid-2 {
+  .projetos-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
-  .skills {
+  .card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .card li {
+    margin-bottom: 8px;
+  }
+
+  .linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .habilidades .card {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
 
-  .skills p {
+  .habilidades p {
     background: #0f172a;
     padding: 8px 12px;
     border-radius: 20px;
@@ -105,22 +138,22 @@
     font-size: 14px;
   }
 
+  section {
+    padding: 40px 20px;
+  }
+
   @media (max-width: 768px) {
-    .grid-3,
-    .grid-2 {
+    .projetos-container,
+    .linha-dupla {
       grid-template-columns: 1fr;
     }
 
     h1 {
       font-size: 28px;
     }
-
-    section {
-      padding: 30px 15px;
-    }
   }
 
-  /* animação scroll */
+  /* ANIMAÇÃO */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -191,7 +224,6 @@
 
 <header class="reveal">
 
-  <!-- TOOLS -->
   <div class="top-tools">
 
     <!-- bandeiras -->
@@ -201,7 +233,6 @@
     <!-- dark mode -->
     <div class="btn" onclick="toggleTheme()" id="themeBtn">🌙</div>
 
-    <!-- google translate escondido -->
     <div id="google_translate_element"></div>
   </div>
 
@@ -216,78 +247,77 @@
 
 </header>
 
-<!-- SOBRE -->
 <section class="reveal">
   <h2>💻 Sobre mim</h2>
   <div class="card">
     <p>
       Profissional em desenvolvimento na área de operações mainframe, com foco em ambientes z/OS, atuando em monitoramento de jobs, controle de rotinas batch e acompanhamento de processos críticos.
     </p>
-
     <p>
       Possui conhecimento em JCL, TSO e Control-M, com foco em estabilidade, continuidade operacional e cumprimento de SLAs.
     </p>
   </div>
 </section>
 
-<!-- EXPERIÊNCIA / FORMAÇÃO / IDIOMAS -->
-<section class="grid-3 reveal">
+<section class="linha-dupla reveal">
 
   <div class="card">
     <h2>💼 Experiência</h2>
     <h3>Analista de Operações Mainframe</h3>
     <p><strong>Global Hitss</strong></p>
     <p><em>Atual • Rio de Janeiro</em></p>
-
     <ul>
-      <li>Monitoramento de jobs batch em z/OS</li>
-      <li>Análise de falhas e logs</li>
+      <li>Monitoramento de jobs batch em ambiente z/OS</li>
+      <li>Análise de falhas e leitura de logs</li>
       <li>Acompanhamento de processos críticos</li>
-      <li>Execução via JCL</li>
-      <li>Uso de TSO e Control-M</li>
+      <li>Execução e controle de rotinas via JCL</li>
+      <li>Uso de TSO e Control-M no gerenciamento operacional</li>
+      <li>Garantia de SLAs e continuidade dos serviços</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>🎓 Formação</h2>
-    <p>Graduação em ADS pela UERJ.</p>
-    <p>Coeficiente: 7.75</p>
+    <p>Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela UERJ.</p>
+    <p>Coeficiente de rendimento: 7.75</p>
   </div>
 
   <div class="card">
     <h2>🌍 Idiomas</h2>
     <p><strong>Inglês</strong></p>
-    <p>B1 Intermediário</p>
-    <p>Experiência na Inglaterra</p>
-    <p>Cambridge PET</p>
+    <p><em>Intermediário a avançado (B1)</em></p>
+    <p>Experiência internacional na Inglaterra.</p>
+    <p>Certificação Cambridge PET.</p>
   </div>
 
 </section>
 
-<!-- HABILIDADES -->
 <section class="reveal">
   <h2>⚙️ Habilidades</h2>
-  <div class="card skills">
-    <p>JCL</p>
-    <p>TSO</p>
-    <p>Control-M</p>
-    <p>z/OS</p>
-    <p>Batch</p>
-    <p>Análise de falhas</p>
+  <div class="card habilidades">
+    <p>💻 JCL</p>
+    <p>🖥️ TSO</p>
+    <p>📊 Control-M</p>
+    <p>⚙️ z/OS</p>
+    <p>🔄 Batch</p>
+    <p>🔍 Análise de falhas</p>
   </div>
 </section>
 
-<!-- PROJETOS -->
 <section class="reveal">
   <h2>📂 Projetos</h2>
 
-  <div class="grid-2">
+  <div class="projetos-container">
 
     <div class="card">
-      <h3>Monitoramento Jobs</h3>
-      <p>Projeto mainframe com logs e status batch.</p>
-      <p><a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema</a></p>
-      <p><a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">GitHub</a></p>
+      <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
+      <p>
+        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
+        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
+        Projeto focado em rotinas operacionais, estabilidade e acompanhamento de processos críticos.
+      </p>
+      <p><a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a></p>
+      <p><a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a></p>
     </div>
 
     <div class="card">
@@ -298,14 +328,12 @@
   </div>
 </section>
 
-<!-- CONTATO -->
 <section class="reveal">
   <h2>📫 Contato</h2>
-
-  <div class="card" style="text-align:center;">
-    <p><a href="mailto:freitasthaise1@gmail.com">Email</a></p>
-    <p><a href="https://wa.me/21974475407">WhatsApp</a></p>
-    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">LinkedIn</a></p>
+  <div class="card">
+    <p><a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a></p>
+    <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 Ver LinkedIn</a></p>
   </div>
 </section>
 
