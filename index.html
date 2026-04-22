@@ -131,40 +131,43 @@
   }
 
   /* =========================
-     🔵 TRADUTOR ESTILO DASHBOARD
+     🌐 TRADUTOR COM BANDEIRAS
   ========================== */
+
   .translate-box {
     position: absolute;
     top: 15px;
     right: 20px;
     z-index: 999;
+    display: flex;
+    gap: 8px;
   }
 
-  .translate-btn {
-    width: 44px;
-    height: 44px;
+  .flag-btn {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+    background: #1e293b;
     border: 1px solid #38bdf8;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 0 12px rgba(56,189,248,0.3);
-    transition: 0.3s ease;
+    transition: 0.3s;
+    font-size: 18px;
+    box-shadow: 0 0 12px rgba(56,189,248,0.2);
   }
 
-  .translate-btn:hover {
+  .flag-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 18px rgba(56,189,248,0.6);
   }
 
-  /* esconde visual padrão do Google */
   #google_translate_element {
-    opacity: 0;
     position: absolute;
     top: 50px;
     right: 0;
+    opacity: 0;
   }
 
 </style>
@@ -174,20 +177,11 @@
 
 <header class="reveal">
 
-  <!-- 🔵 BOTÃO GLOBO CUSTOM -->
+  <!-- 🌐 BOTÕES DE BANDEIRA -->
   <div class="translate-box">
-
-    <div class="translate-btn" onclick="toggleTranslate()">
-      <!-- ÍCONE GLOBO SVG -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-    </div>
-
+    <div class="flag-btn" onclick="setLang('pt')">🇧🇷</div>
+    <div class="flag-btn" onclick="setLang('en')">🇺🇸</div>
     <div id="google_translate_element"></div>
-
   </div>
 
   <div class="header-container">
@@ -248,7 +242,6 @@
     <p><em>Intermediário a avançado (B1)</em></p>
 
     <p>Experiência internacional na Inglaterra.</p>
-
     <p>Certificação Cambridge PET.</p>
   </div>
 
@@ -303,11 +296,6 @@
 
 <!-- JS -->
 <script>
-function toggleTranslate() {
-  const el = document.getElementById("google_translate_element");
-  el.style.opacity = el.style.opacity === "1" ? "0" : "1";
-}
-
 const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
@@ -319,6 +307,14 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
+
+function setLang(lang) {
+  const combo = document.querySelector(".goog-te-combo");
+  if (combo) {
+    combo.value = lang;
+    combo.dispatchEvent(new Event("change"));
+  }
+}
 </script>
 
 <!-- GOOGLE TRANSLATE -->
