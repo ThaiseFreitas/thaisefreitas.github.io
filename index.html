@@ -126,9 +126,17 @@
 
   .habilidades .card {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Impede a quebra de linha */
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start; /* Alinha ao início para permitir o scroll */
+    overflow-x: auto; /* Adiciona scroll horizontal se faltar espaço */
+    white-space: nowrap; /* Garante que o texto não quebre dentro dos itens */
+    padding: 20px;
+  }
+
+  /* Opcional: esconde a barra de rolagem para um visual mais limpo */
+  .habilidades .card::-webkit-scrollbar {
+    display: none;
   }
 
   .habilidades p {
