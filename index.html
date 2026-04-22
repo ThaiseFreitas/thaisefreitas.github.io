@@ -120,7 +120,6 @@
     }
   }
 
-  /* animação scroll */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -132,71 +131,12 @@
     transform: translateY(0);
   }
 
-  /* BOTÕES TOPO */
-  .top-tools {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #1e293b;
-    border: 1px solid #38bdf8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .btn:hover {
-    transform: scale(1.1);
-  }
-
-  /* LIGHT MODE */
-  body.light {
-    background: #f5f7fb;
-    color: #111;
-  }
-
-  body.light .card {
-    background: #fff;
-    color: #111;
-  }
-
-  body.light header {
-    background: #fff;
-  }
-
-  body.light .skills p {
-    background: #e5e7eb;
-    color: #111;
-  }
-
 </style>
 </head>
 
 <body>
 
 <header class="reveal">
-
-  <!-- BOTÕES -->
-  <div class="top-tools">
-
-    <!-- bandeiras -->
-    <div class="btn" onclick="setLang('pt')">🇧🇷</div>
-    <div class="btn" onclick="setLang('en')">🇺🇸</div>
-
-    <!-- tema -->
-    <div class="btn" onclick="toggleTheme()" id="themeBtn">🌙</div>
-
-    <div id="google_translate_element"></div>
-  </div>
 
   <div class="header-container">
     <img src="imagemCV.jpeg" class="foto" alt="Thaise Freitas">
@@ -291,11 +231,11 @@
       </p>
 
       <p>
-        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema</a>
+        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a>
       </p>
 
       <p>
-        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">GitHub</a>
+        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a>
       </p>
     </div>
 
@@ -312,48 +252,25 @@
   <h2>📫 Contato</h2>
 
   <div class="card" style="text-align:center;">
-    <p><a href="mailto:freitasthaise1@gmail.com">📧 Email</a></p>
+    <p><a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a></p>
     <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
-    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 LinkedIn</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 Ver meu perfil no LinkedIn</a></p>
   </div>
 </section>
 
 <script>
-function setLang(lang) {
-  const combo = document.querySelector(".goog-te-combo");
-  if (combo) {
-    combo.value = lang;
-    combo.dispatchEvent(new Event("change"));
-  }
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("light");
-  const btn = document.getElementById("themeBtn");
-  btn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
-}
-
 const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('active');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
   });
 });
 
 elements.forEach(el => observer.observe(el));
 </script>
-
-<script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'pt'},
-    'google_translate_element'
-  );
-}
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
