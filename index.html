@@ -38,20 +38,29 @@
     margin: auto;
   }
 
+  /* ===== CARD ===== */
   .card {
     background: #1e293b;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
   }
 
   a {
     color: #38bdf8;
     text-decoration: none;
+    transition: 0.3s ease;
   }
 
   a:hover {
     text-decoration: underline;
+    transform: scale(1.05);
   }
 
   /* HEADER */
@@ -116,12 +125,26 @@
       padding: 30px 15px;
     }
   }
+
+  /* ===== ANIMAÇÃO SCROLL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="reveal">
+
   <div class="header-container">
     <img src="imagemCV.jpeg" class="foto" alt="Thaise Freitas">
 
@@ -130,10 +153,11 @@
       <p>Operações Mainframe | Ambientes z/OS | Monitoramento e Rotinas Batch</p>
     </div>
   </div>
+
 </header>
 
 <!-- SOBRE -->
-<section>
+<section class="reveal">
   <h2>💻 Sobre mim</h2>
   <div class="card">
     <p>
@@ -147,7 +171,7 @@
 </section>
 
 <!-- EXPERIÊNCIA / FORMAÇÃO / IDIOMAS -->
-<section class="grid-3">
+<section class="grid-3 reveal">
 
   <div class="card">
     <h2>💼 Experiência</h2>
@@ -186,7 +210,7 @@
 </section>
 
 <!-- HABILIDADES -->
-<section>
+<section class="reveal">
   <h2>⚙️ Habilidades</h2>
 
   <div class="card skills">
@@ -200,7 +224,7 @@
 </section>
 
 <!-- PROJETOS -->
-<section>
+<section class="reveal">
   <h2>📂 Projetos</h2>
 
   <div class="grid-2">
@@ -215,15 +239,11 @@
       </p>
 
       <p>
-        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">
-          Ver sistema funcionando
-        </a>
+        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a>
       </p>
 
       <p>
-        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">
-          Ver código no GitHub
-        </a>
+        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a>
       </p>
     </div>
 
@@ -236,25 +256,30 @@
 </section>
 
 <!-- CONTATO -->
-<section>
+<section class="reveal">
   <h2>📫 Contato</h2>
 
   <div class="card" style="text-align:center;">
-    <p>
-      <a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a>
-    </p>
-
-    <p>
-      <a href="https://wa.me/21974475407">💬 WhatsApp</a>
-    </p>
-
-    <p>
-      <a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">
-        💼 Ver meu perfil no LinkedIn
-      </a>
-    </p>
+    <p><a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a></p>
+    <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 Ver meu perfil no LinkedIn</a></p>
   </div>
 </section>
+
+<!-- ANIMAÇÃO JS -->
+<script>
+const elements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
