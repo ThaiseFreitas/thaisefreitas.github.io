@@ -120,6 +120,7 @@
     }
   }
 
+  /* animação scroll */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -131,12 +132,78 @@
     transform: translateY(0);
   }
 
+  /* TOOLS */
+  .top-tools {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1px solid #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+  }
+
+  body.light {
+    background: #f5f7fb;
+    color: #111;
+  }
+
+  body.light .card {
+    background: #fff;
+    color: #111;
+  }
+
+  body.light header {
+    background: #fff;
+  }
+
+  body.light .skills p {
+    background: #e5e7eb;
+    color: #111;
+  }
+
+  /* esconder google translate original */
+  #google_translate_element {
+    display: none;
+  }
+
 </style>
 </head>
 
 <body>
 
 <header class="reveal">
+
+  <!-- TOOLS -->
+  <div class="top-tools">
+
+    <!-- bandeiras -->
+    <div class="btn" onclick="setLang('pt')">🇧🇷</div>
+    <div class="btn" onclick="setLang('en')">🇺🇸</div>
+
+    <!-- dark mode -->
+    <div class="btn" onclick="toggleTheme()" id="themeBtn">🌙</div>
+
+    <!-- google translate escondido -->
+    <div id="google_translate_element"></div>
+  </div>
 
   <div class="header-container">
     <img src="imagemCV.jpeg" class="foto" alt="Thaise Freitas">
@@ -168,36 +235,31 @@
 
   <div class="card">
     <h2>💼 Experiência</h2>
-
     <h3>Analista de Operações Mainframe</h3>
     <p><strong>Global Hitss</strong></p>
     <p><em>Atual • Rio de Janeiro</em></p>
 
     <ul>
-      <li>Monitoramento de jobs batch em ambiente z/OS</li>
-      <li>Análise de falhas e leitura de logs</li>
+      <li>Monitoramento de jobs batch em z/OS</li>
+      <li>Análise de falhas e logs</li>
       <li>Acompanhamento de processos críticos</li>
-      <li>Execução e controle de rotinas via JCL</li>
-      <li>Uso de TSO e Control-M no gerenciamento operacional</li>
-      <li>Garantia de SLAs e continuidade dos serviços</li>
+      <li>Execução via JCL</li>
+      <li>Uso de TSO e Control-M</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>🎓 Formação</h2>
-    <p>Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela UERJ.</p>
-    <p>Coeficiente de rendimento: 7.75</p>
+    <p>Graduação em ADS pela UERJ.</p>
+    <p>Coeficiente: 7.75</p>
   </div>
 
   <div class="card">
     <h2>🌍 Idiomas</h2>
-
     <p><strong>Inglês</strong></p>
-    <p><em>Intermediário a avançado (B1)</em></p>
-
-    <p>Experiência internacional na Inglaterra.</p>
-
-    <p>Certificação Cambridge PET.</p>
+    <p>B1 Intermediário</p>
+    <p>Experiência na Inglaterra</p>
+    <p>Cambridge PET</p>
   </div>
 
 </section>
@@ -205,14 +267,13 @@
 <!-- HABILIDADES -->
 <section class="reveal">
   <h2>⚙️ Habilidades</h2>
-
   <div class="card skills">
-    <p>💻 JCL</p>
-    <p>🖥️ TSO</p>
-    <p>📊 Control-M</p>
-    <p>⚙️ z/OS</p>
-    <p>🔄 Batch</p>
-    <p>🔍 Análise de falhas</p>
+    <p>JCL</p>
+    <p>TSO</p>
+    <p>Control-M</p>
+    <p>z/OS</p>
+    <p>Batch</p>
+    <p>Análise de falhas</p>
   </div>
 </section>
 
@@ -223,20 +284,10 @@
   <div class="grid-2">
 
     <div class="card">
-      <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
-
-      <p>
-        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
-        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
-      </p>
-
-      <p>
-        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema funcionando</a>
-      </p>
-
-      <p>
-        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">Ver código no GitHub</a>
-      </p>
+      <h3>Monitoramento Jobs</h3>
+      <p>Projeto mainframe com logs e status batch.</p>
+      <p><a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema</a></p>
+      <p><a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">GitHub</a></p>
     </div>
 
     <div class="card">
@@ -252,25 +303,48 @@
   <h2>📫 Contato</h2>
 
   <div class="card" style="text-align:center;">
-    <p><a href="mailto:freitasthaise1@gmail.com">📧 Enviar email</a></p>
-    <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
-    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 Ver meu perfil no LinkedIn</a></p>
+    <p><a href="mailto:freitasthaise1@gmail.com">Email</a></p>
+    <p><a href="https://wa.me/21974475407">WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">LinkedIn</a></p>
   </div>
 </section>
 
 <script>
+function setLang(lang) {
+  const combo = document.querySelector(".goog-te-combo");
+  if (combo) {
+    combo.value = lang;
+    combo.dispatchEvent(new Event("change"));
+  }
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("light");
+  document.getElementById("themeBtn").textContent =
+    document.body.classList.contains("light") ? "☀️" : "🌙";
+}
+
 const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('active');
   });
 });
 
 elements.forEach(el => observer.observe(el));
 </script>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'pt'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
