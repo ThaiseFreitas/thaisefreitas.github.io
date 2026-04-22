@@ -14,7 +14,7 @@
     }
 
     header {
-      padding: 60px 20px;
+  padding: 60px 20px;
   background: linear-gradient(135deg, #1e293b, #0f172a);
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
@@ -126,17 +126,21 @@
 <body>
 
 <!-- ✅ HEADER CORRIGIDO -->
-<header class="header-container">
+<header>
 
-  <img src="imagemCV.jpeg" alt="Thaise Freitas" class="foto">
-
-  <div>
-    <h1><span style="color:#38bdf8;">Thaise</span> Freitas 👋</h1>
-    <p>Operações Mainframe | Ambientes z/OS | Monitoramento e Rotinas Batch</p>
+  <div style="text-align: right; margin-bottom: 10px;">
+    <div id="google_translate_element"></div>
   </div>
 
-</header>
+  <div class="header-container">
+    <img src="imagemCV.jpeg" alt="Thaise Freitas" class="foto">
 
+    <div>
+      <h1><span style="color:#38bdf8;">Thaise</span> Freitas 👋</h1>
+      <p>Operações Mainframe | Ambientes z/OS | Monitoramento e Rotinas Batch</p>
+    </div>
+  </div>
+</header>
 <section>
   <h2>💻 Sobre mim</h2>
   <p>Profissional em desenvolvimento na área de operações mainframe, com foco em ambientes z/OS, atuando em monitoramento de jobs, controle de rotinas batch e acompanhamento de processos críticos. Possui conhecimento em JCL, TSO e Control-M, com atenção a estabilidade, continuidade operacional e cumprimento de SLAs.</p>
@@ -231,6 +235,17 @@
 </p>
   </div>
 </section>
+
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'pt'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
