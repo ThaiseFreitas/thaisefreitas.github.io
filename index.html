@@ -21,7 +21,6 @@
     background: linear-gradient(135deg, #1e293b, #0f172a);
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     position: relative;
-    transition: 0.4s ease;
   }
 
   h1 {
@@ -121,6 +120,7 @@
     }
   }
 
+  /* animação scroll */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -132,21 +132,16 @@
     transform: translateY(0);
   }
 
-  /* =========================
-     🌐 TRADUTOR + TEMA BUTTONS
-  ========================== */
-
-  .translate-box {
+  /* BOTÕES TOPO */
+  .top-tools {
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 15px;
     display: flex;
     gap: 10px;
-    z-index: 999;
   }
 
-  .flag-btn,
-  .theme-btn {
+  .btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -157,48 +152,30 @@
     justify-content: center;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 18px;
   }
 
-  .flag-btn:hover,
-  .theme-btn:hover {
+  .btn:hover {
     transform: scale(1.1);
   }
 
-  #google_translate_element {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    opacity: 0;
-  }
-
-  /* =========================
-     ☀️ LIGHT MODE (OVERLAY)
-  ========================== */
-
+  /* LIGHT MODE */
   body.light {
     background: #f5f7fb;
     color: #111;
   }
 
-  body.light header {
-    background: #ffffff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  body.light .card {
+    background: #fff;
+    color: #111;
   }
 
-  body.light .card {
-    background: #ffffff;
-    color: #111;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  body.light header {
+    background: #fff;
   }
 
   body.light .skills p {
     background: #e5e7eb;
     color: #111;
-  }
-
-  body.light a {
-    color: #2563eb;
   }
 
 </style>
@@ -208,15 +185,15 @@
 
 <header class="reveal">
 
-  <!-- 🌐 CONTROLES (BANDEIRAS + TEMA) -->
-  <div class="translate-box">
+  <!-- BOTÕES -->
+  <div class="top-tools">
 
-    <div class="flag-btn" onclick="setLang('pt')">🇧🇷</div>
-    <div class="flag-btn" onclick="setLang('en')">🇺🇸</div>
+    <!-- bandeiras -->
+    <div class="btn" onclick="setLang('pt')">🇧🇷</div>
+    <div class="btn" onclick="setLang('en')">🇺🇸</div>
 
-    <div class="theme-btn" onclick="toggleTheme()">
-      🌙
-    </div>
+    <!-- tema -->
+    <div class="btn" onclick="toggleTheme()" id="themeBtn">🌙</div>
 
     <div id="google_translate_element"></div>
   </div>
@@ -251,6 +228,7 @@
 
   <div class="card">
     <h2>💼 Experiência</h2>
+
     <h3>Analista de Operações Mainframe</h3>
     <p><strong>Global Hitss</strong></p>
     <p><em>Atual • Rio de Janeiro</em></p>
@@ -260,22 +238,26 @@
       <li>Análise de falhas e leitura de logs</li>
       <li>Acompanhamento de processos críticos</li>
       <li>Execução e controle de rotinas via JCL</li>
-      <li>Uso de TSO e Control-M</li>
-      <li>Garantia de SLAs</li>
+      <li>Uso de TSO e Control-M no gerenciamento operacional</li>
+      <li>Garantia de SLAs e continuidade dos serviços</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>🎓 Formação</h2>
-    <p>UERJ - ADS</p>
-    <p>Coeficiente: 7.75</p>
+    <p>Graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela UERJ.</p>
+    <p>Coeficiente de rendimento: 7.75</p>
   </div>
 
   <div class="card">
     <h2>🌍 Idiomas</h2>
-    <p>Inglês B1</p>
-    <p>Experiência internacional</p>
-    <p>Cambridge PET</p>
+
+    <p><strong>Inglês</strong></p>
+    <p><em>Intermediário a avançado (B1)</em></p>
+
+    <p>Experiência internacional na Inglaterra.</p>
+
+    <p>Certificação Cambridge PET.</p>
   </div>
 
 </section>
@@ -285,11 +267,12 @@
   <h2>⚙️ Habilidades</h2>
 
   <div class="card skills">
-    <p>JCL</p>
-    <p>TSO</p>
-    <p>Control-M</p>
-    <p>z/OS</p>
-    <p>Batch</p>
+    <p>💻 JCL</p>
+    <p>🖥️ TSO</p>
+    <p>📊 Control-M</p>
+    <p>⚙️ z/OS</p>
+    <p>🔄 Batch</p>
+    <p>🔍 Análise de falhas</p>
   </div>
 </section>
 
@@ -300,16 +283,25 @@
   <div class="grid-2">
 
     <div class="card">
-      <h3>Monitoramento Jobs</h3>
-      <p>Projeto mainframe z/OS</p>
+      <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
 
-      <p><a href="#">Ver sistema</a></p>
-      <p><a href="#">GitHub</a></p>
+      <p>
+        Simulação de monitoramento de jobs batch em ambiente mainframe (z/OS),
+        incluindo atualização de status em tempo real, visualização de logs e filtro de busca.
+      </p>
+
+      <p>
+        <a href="https://thaisefreitas.github.io/monitoramento-jobs/" target="_blank">Ver sistema</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/thaisefreitas/monitoramento-jobs" target="_blank">GitHub</a>
+      </p>
     </div>
 
     <div class="card">
       <h3>Projeto 2</h3>
-      <p>Descrição</p>
+      <p>Descrição do projeto</p>
     </div>
 
   </div>
@@ -320,13 +312,12 @@
   <h2>📫 Contato</h2>
 
   <div class="card" style="text-align:center;">
-    <p>Email</p>
-    <p>WhatsApp</p>
-    <p>LinkedIn</p>
+    <p><a href="mailto:freitasthaise1@gmail.com">📧 Email</a></p>
+    <p><a href="https://wa.me/21974475407">💬 WhatsApp</a></p>
+    <p><a href="https://www.linkedin.com/in/thaise-freitas-a88a2a65/" target="_blank">💼 LinkedIn</a></p>
   </div>
 </section>
 
-<!-- JS -->
 <script>
 function setLang(lang) {
   const combo = document.querySelector(".goog-te-combo");
@@ -338,7 +329,7 @@ function setLang(lang) {
 
 function toggleTheme() {
   document.body.classList.toggle("light");
-  const btn = document.querySelector(".theme-btn");
+  const btn = document.getElementById("themeBtn");
   btn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 }
 
@@ -346,16 +337,13 @@ const elements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('active');
   });
 });
 
 elements.forEach(el => observer.observe(el));
 </script>
 
-<!-- GOOGLE TRANSLATE -->
 <script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
