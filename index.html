@@ -117,9 +117,10 @@
     margin-bottom: 8px;
   }
 
-  .linha-dupla {
+  /* Ajustado para 3 colunas conforme solicitado */
+  .linha-tripla {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
 
@@ -142,9 +143,14 @@
     padding: 40px 20px;
   }
 
+  @media (max-width: 900px) {
+    .linha-tripla {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 768px) {
-    .projetos-container,
-    .linha-dupla {
+    .projetos-container {
       grid-template-columns: 1fr;
     }
 
@@ -223,28 +229,20 @@
 <body>
 
 <header class="reveal">
-
   <div class="top-tools">
-
-    <!-- bandeiras -->
     <div class="btn" onclick="setLang('pt')">🇧🇷</div>
     <div class="btn" onclick="setLang('en')">🇺🇸</div>
-
-    <!-- dark mode -->
     <div class="btn" onclick="toggleTheme()" id="themeBtn">🌙</div>
-
     <div id="google_translate_element"></div>
   </div>
 
   <div class="header-container">
     <img src="imagemCV.jpeg" class="foto" alt="Thaise Freitas">
-
     <div>
       <h1><span style="color:#38bdf8;">Thaise</span> Freitas 👋</h1>
       <p>Operações Mainframe | Ambientes z/OS | Monitoramento e Rotinas Batch</p>
     </div>
   </div>
-
 </header>
 
 <section class="reveal">
@@ -259,8 +257,7 @@
   </div>
 </section>
 
-<section class="linha-dupla reveal">
-
+<section class="linha-tripla reveal">
   <div class="card">
     <h2>💼 Experiência</h2>
     <h3>Analista de Operações Mainframe</h3>
@@ -289,7 +286,6 @@
     <p>Experiência internacional na Inglaterra.</p>
     <p>Certificação Cambridge PET.</p>
   </div>
-
 </section>
 
 <section class="reveal">
@@ -306,9 +302,7 @@
 
 <section class="reveal">
   <h2>📂 Projetos</h2>
-
   <div class="projetos-container">
-
     <div class="card">
       <h3>🖥️ Monitoramento de Jobs Batch (Mainframe)</h3>
       <p>
@@ -324,7 +318,6 @@
       <h3>Projeto 2</h3>
       <p>Descrição do projeto</p>
     </div>
-
   </div>
 </section>
 
@@ -361,9 +354,7 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
-</script>
 
-<script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     {pageLanguage: 'pt'},
